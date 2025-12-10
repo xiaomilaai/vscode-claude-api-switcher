@@ -1,0 +1,19 @@
+{
+  "command.switchProvider": "Switch Provider",
+  "command.editApiKey": "Edit API Key",
+  "command.addCustomProvider": "Add Custom Provider",
+  "command.viewConfig": "View Current Configuration",
+  "command.refresh": "Refresh",
+  "command.editProvider": "Edit Provider",
+  "command.deleteProvider": "Delete Provider",
+  "command.applyProvider": "Apply Provider",
+  "command.openWebsite": "Open Website",
+  "view.currentConfig": "Current Configuration",
+  "view.main": "Claude Code API Switcher",
+  "view.providers": "Preset Providers",
+  "view.customProviders": "Custom Providers",
+  "welcome.noCustomProviders": "No custom providers configured yet.",
+  "config.showStatusBar": "Show Claude API provider in status bar",
+  "config.statusBarAlignment": "Status bar item alignment (left or right)",
+  "config.claudeConfigPath": "Custom path to Claude settings.json file (leave empty for default ~/.claude/settings.json)"
+}

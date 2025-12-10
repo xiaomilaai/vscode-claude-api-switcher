@@ -1,0 +1,19 @@
+{
+  "command.switchProvider": "切换供应商",
+  "command.editApiKey": "编辑 API Key",
+  "command.addCustomProvider": "添加自定义供应商",
+  "command.viewConfig": "查看当前配置",
+  "command.refresh": "刷新",
+  "command.editProvider": "编辑供应商",
+  "command.deleteProvider": "删除供应商",
+  "command.applyProvider": "应用供应商",
+  "command.openWebsite": "打开网站",
+  "view.currentConfig": "当前配置",
+  "view.main": "Claude Code API 切换器",
+  "view.providers": "预设供应商",
+  "view.customProviders": "自定义供应商",
+  "welcome.noCustomProviders": "暂无自定义供应商配置。",
+  "config.showStatusBar": "在状态栏显示当前 Claude API 供应商",
+  "config.statusBarAlignment": "状态栏项目对齐方式（左侧或右侧）",
+  "config.claudeConfigPath": "自定义 Claude settings.json 文件路径（留空则使用默认路径 ~/.claude/settings.json）"
+}

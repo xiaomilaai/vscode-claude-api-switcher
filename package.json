@@ -1,0 +1,184 @@
+{
+  "name": "claude-api-switcher",
+  "displayName": "Claude Code API Switcher",
+  "description": "Quickly switch Claude Code API providers without leaving VS Code",
+  "version": "0.1.0",
+  "publisher": "xiaomila",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xiaomila/vscode-claude-api-switcher"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "claude",
+    "anthropic",
+    "api",
+    "ai",
+    "llm",
+    "claude-code"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "claudeSwitch.switchProvider",
+        "title": "%command.switchProvider%",
+        "category": "Claude"
+      },
+      {
+        "command": "claudeSwitch.editApiKey",
+        "title": "%command.editApiKey%",
+        "category": "Claude"
+      },
+      {
+        "command": "claudeSwitch.addCustomProvider",
+        "title": "%command.addCustomProvider%",
+        "category": "Claude"
+      },
+      {
+        "command": "claudeSwitch.viewConfig",
+        "title": "%command.viewConfig%",
+        "category": "Claude"
+      },
+      {
+        "command": "claudeSwitch.refreshSidebar",
+        "title": "%command.refresh%",
+        "icon": "$(refresh)",
+        "category": "Claude"
+      },
+      {
+        "command": "claudeSwitch.editProvider",
+        "title": "%command.editProvider%",
+        "icon": "$(edit)",
+        "category": "Claude"
+      },
+      {
+        "command": "claudeSwitch.deleteProvider",
+        "title": "%command.deleteProvider%",
+        "icon": "$(trash)",
+        "category": "Claude"
+      },
+      {
+        "command": "claudeSwitch.applyProvider",
+        "title": "%command.applyProvider%",
+        "icon": "$(check)",
+        "category": "Claude"
+      },
+      {
+        "command": "claudeSwitch.openWebsite",
+        "title": "%command.openWebsite%",
+        "icon": "$(link-external)",
+        "category": "Claude"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "claude-switcher",
+          "title": "Claude Code API Switcher",
+          "icon": "resources/icons/claude.svg"
+        }
+      ]
+    },
+    "views": {
+      "claude-switcher": [
+        {
+          "id": "claudeMain",
+          "name": "%view.main%"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "claudeMain",
+        "contents": "%welcome.noCustomProviders%\n[%command.addCustomProvider%](command:claudeSwitch.addCustomProvider)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "claudeSwitch.refreshSidebar",
+          "when": "view == claudeMain",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "claudeSwitch.applyProvider",
+          "when": "view == claudeMain",
+          "group": "inline@1"
+        },
+        {
+          "command": "claudeSwitch.editProvider",
+          "when": "view == claudeMain && viewItem == customProvider",
+          "group": "inline@2"
+        },
+        {
+          "command": "claudeSwitch.deleteProvider",
+          "when": "view == claudeMain && viewItem == customProvider",
+          "group": "inline@3"
+        },
+        {
+          "command": "claudeSwitch.openWebsite",
+          "when": "viewItem == provider",
+          "group": "context@1"
+        },
+        {
+          "command": "claudeSwitch.editApiKey",
+          "when": "viewItem == configItem",
+          "group": "context@1"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Claude Code API Switcher",
+      "properties": {
+        "claudeSwitch.showStatusBar": {
+          "type": "boolean",
+          "default": true,
+          "description": "%config.showStatusBar%"
+        },
+        "claudeSwitch.statusBarAlignment": {
+          "type": "string",
+          "enum": ["left", "right"],
+          "default": "right",
+          "description": "%config.statusBarAlignment%"
+        },
+        "claudeSwitch.claudeConfigPath": {
+          "type": "string",
+          "default": "",
+          "description": "%config.claudeConfigPath%"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "@vscode/test-electron": "^2.3.8",
+    "@vscode/vsce": "^2.22.0",
+    "eslint": "^8.54.0",
+    "typescript": "^5.3.2"
+  }
+}
