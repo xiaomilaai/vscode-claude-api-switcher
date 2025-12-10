@@ -1,4 +1,4 @@
-# Claude API Switcher
+# CCAS - Claude Code API Switcher
 
 Quickly switch Claude Code API providers without leaving VS Code.
 

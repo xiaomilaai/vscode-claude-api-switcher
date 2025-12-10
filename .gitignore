@@ -9,7 +9,7 @@ node_modules/
 .vscode-test/
 
 # Packaged extension
-*.vsix
+#*.vsix
 
 # macOS
 .DS_Store

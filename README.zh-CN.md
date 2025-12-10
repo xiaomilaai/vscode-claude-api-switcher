@@ -1,4 +1,4 @@
-# Claude API Switcher
+# CCAS - Claude Code API Switcher
 
 在 VS Code 中快速切换 Claude Code API 供应商。
 
