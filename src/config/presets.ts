@@ -1,6 +1,5 @@
 /**
  * Hardcoded provider presets
- * Based on CC Switch project presets
  */
 import type { Provider, ProviderCategory } from './types';
 

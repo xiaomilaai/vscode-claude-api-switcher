@@ -15,10 +15,8 @@ Claude API Switcher 是一个 VS Code 扩展，用于在编辑器内快速切换
 
 ### 1.2 设计原则
 
-1. **完全独立**：不依赖 CC Switch 或其他外部应用
-2. **轻量级**：仅包含核心切换功能，避免过度设计
-3. **兼容性**：与 CC Switch 使用相同的配置文件，可并行使用
-4. **安全性**：原子写入防止配置损坏，API Key 不会泄露到日志
+1. **轻量级**：仅包含核心切换功能，避免过度设计
+2. **安全性**：原子写入防止配置损坏，API Key 不会泄露到日志
 
 ---
 
@@ -120,7 +118,7 @@ public async writeConfig(settings: ClaudeSettings): Promise<void> {
 
 #### 3.1.3 文件监听
 
-监听配置文件变化，响应外部修改（如 CC Switch 或手动编辑）：
+监听配置文件变化，响应外部修改（如手动编辑）：
 
 ```typescript
 public startWatching(): vscode.Disposable {
@@ -158,7 +156,7 @@ const mergedConfig: ClaudeSettings = {
 #### 3.2.1 数据来源
 
 ```
-预设供应商：硬编码在 src/config/presets.ts（从 CC Switch 复制）
+预设供应商：硬编码在 src/config/presets.ts
 自定义供应商：存储在 VS Code globalState（跨会话持久化）
 ```
 
@@ -292,7 +290,7 @@ class PresetProvidersProvider implements vscode.TreeDataProvider<TreeItem> {
 ```
 ┌─────────────────┐     ┌──────────────┐     ┌───────────────────┐
 │ 外部修改配置文件 │────▶│  fs.watch    │────▶│ 防抖检测          │
-│ (CC Switch/手动) │     │  监听变化    │     │ (排除自身写入)    │
+│   (手动编辑)     │     │  监听变化    │     │ (排除自身写入)    │
 └─────────────────┘     └──────────────┘     └───────────────────┘
                                                       │
                                                       ▼
@@ -334,7 +332,7 @@ class PresetProvidersProvider implements vscode.TreeDataProvider<TreeItem> {
 ```
 ┌─────────────────┐     ┌──────────────┐     ┌───────────────────┐
 │ 外部修改配置文件 │────▶│  fs.watch    │────▶│ 防抖检测          │
-│ (CC Switch/手动) │     │  监听变化    │     │ (排除自身写入)    │
+│   (手动编辑)     │     │  监听变化    │     │ (排除自身写入)    │
 └─────────────────┘     └──────────────┘     └───────────────────┘
                                                       │
                                                       ▼

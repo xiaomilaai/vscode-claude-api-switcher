@@ -1,6 +1,5 @@
 /**
  * Core type definitions for Claude API Switcher
- * Partially reused from CC Switch project
  */
 
 /**

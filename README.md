@@ -64,6 +64,29 @@ Click the status bar item showing the current provider name to open the provider
 
 This extension reads and writes to `~/.claude/settings.json`, the configuration file used by Claude Code CLI. Changes take effect immediately for new Claude Code sessions.
 
+## Switching Plugin Language
+
+This plugin **automatically follows VS Code's language settings** - no separate configuration needed.
+
+### How to change VS Code language:
+
+**Method 1: Via Command Palette**
+1. Press `Cmd+Shift+P` (Mac) or `Ctrl+Shift+P` (Windows/Linux)
+2. Type "Configure Display Language"
+3. Select target language (e.g., "English" or "中文(简体)")
+4. Restart VS Code
+
+**Method 2: Via settings.json**
+```json
+{
+  "locale": "en"      // English
+  // or
+  "locale": "zh-cn"   // Chinese
+}
+```
+
+After changing, restart VS Code and the plugin interface will automatically switch to the corresponding language.
+
 ## Development
 
 ```bash
@@ -83,7 +106,3 @@ npm run package
 ## License
 
 MIT
-
-## Credits
-
-Preset library based on [CC Switch](https://github.com/xiaomila/cc-switch) project.

@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "publisher": "xiaomila",
   "license": "MIT",
+  "icon": "resources/icons/claude.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/xiaomila/vscode-claude-api-switcher"
