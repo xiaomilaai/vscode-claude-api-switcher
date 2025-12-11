@@ -21,8 +21,11 @@ Quickly switch Claude Code API providers without leaving VS Code.
 
 ## Installation
 
-1. Install from VS Code Marketplace (coming soon)
-2. Or download the `.vsix` file and install manually
+Install from:
+- **VS Code Marketplace**: [Claude Code API Switcher](https://marketplace.visualstudio.com/items?itemName=xiaomila.claude-api-switcher)
+- **Open VSX**: [Claude Code API Switcher](https://open-vsx.org/extension/xiaomila/claude-api-switcher)
+
+Or download the `.vsix` file and install manually via `Extensions: Install from VSIX...`
 
 ## Usage
 

@@ -20,8 +20,11 @@
 
 ## 安装
 
-1. 从 VS Code 插件市场安装
-2. 或下载 `.vsix` 文件手动安装
+从以下市场安装：
+- **VS Code 插件市场**：[Claude Code API Switcher](https://marketplace.visualstudio.com/items?itemName=xiaomila.claude-api-switcher)
+- **Open VSX**：[Claude Code API Switcher](https://open-vsx.org/extension/xiaomila/claude-api-switcher)
+
+或下载 `.vsix` 文件，通过 `扩展: 从 VSIX 安装...` 手动安装
 
 ## 使用方法
 
