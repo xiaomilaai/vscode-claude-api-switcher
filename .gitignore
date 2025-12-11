@@ -57,3 +57,4 @@ pnpm-debug.log*
 tmp/
 temp/
 *.tmp
+*.vsix
