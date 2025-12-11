@@ -2,7 +2,7 @@
   "name": "claude-api-switcher",
   "displayName": "Claude Code API Switcher",
   "description": "Quickly switch Claude Code API providers without leaving VS Code",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "xiaomila",
   "license": "MIT",
   "icon": "resources/icons/claude.png",
@@ -150,7 +150,10 @@
         },
         "claudeSwitch.statusBarAlignment": {
           "type": "string",
-          "enum": ["left", "right"],
+          "enum": [
+            "left",
+            "right"
+          ],
           "default": "right",
           "description": "%config.statusBarAlignment%"
         },
